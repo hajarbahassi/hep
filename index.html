@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RIYAD AUTO PRESTIGE | Excellence & Héritage</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@700;900&family=Outfit:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root { 
+            --red: #C8102E; 
+            --gold: #B4975A; 
+            --blue: #002349; 
+            --light: #f9f9f9; 
+            --dark: #070707;
+            --transition: 0.8s cubic-bezier(0.4, 0, 0.2, 1); 
+        }
+        
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Outfit', sans-serif; margin: 0; background: var(--light); color: var(--blue); overflow-x: hidden; transition: background var(--transition), color var(--transition); }
+        
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 5%; text-align: center; }
+        
+        /* Barres et Navigation */
+        .top-bar { background: var(--red); color: white; text-align: center; padding: 12px; font-size: 0.75rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; position: relative; z-index: 1001; }
+        
+        nav { background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); padding: 15px 5%; border-bottom: 2px solid #eee; position: sticky; top: 0; z-index: 1000; transition: 0.3s; }
+        .nav-content { display: flex; justify-content: space-between; align-items: center; max-width: 1400px; margin: 0 auto; }
+        .nav-links { display: flex; gap: 25px; align-items: center; }
+        .nav-links a { text-decoration: none; color: var(--blue); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; transition: 0.3s; }
+        .nav-links a:hover { color: var(--red); }
+        
+        .logo-container { display: flex; align-items: center; text-decoration: none; color: var(--blue); }
+        .logo-icon { background: var(--blue); color: var(--gold); width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; border-radius: 8px; margin-right: 12px; border: 2px solid var(--gold); }
+        .logo-text { font-family: 'Bodoni Moda', serif; font-size: 1.4rem; font-weight: 900; line-height: 1; text-align: left; }
+        .logo-text span { display: block; font-size: 0.7rem; color: var(--red); letter-spacing: 2px; }
+
+        /* Hero */
+        .hero { height: 90vh; background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('vieux-chauffeur.jpg.png') center/cover no-repeat; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; color: white; }
+        .hero h1 { font-family: 'Bodoni Moda', serif; font-size: clamp(3rem, 10vw, 6rem); margin: 0; line-height: 0.9; }
+        .hero p { letter-spacing: 8px; font-weight: 700; color: var(--gold); margin-top: 25px; text-transform: uppercase; }
+
+        /* Section Qui Sommes-Nous */
+        #about { padding: 100px 10%; background: white; display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+        .about-text { text-align: left; }
+        .about-text h2 { font-family: 'Bodoni Moda', serif; font-size: 2.5rem; margin-bottom: 20px; color: var(--blue); }
+        .about-text p { font-size: 1.1rem; line-height: 1.8; color: #555; }
+        .about-img { border-radius: 20px; overflow: hidden; height: 400px; box-shadow: 20px 20px 0 var(--gold); }
+        .about-img img { width: 100%; height: 100%; object-fit: cover; }
+
+        /* Titres de Section */
+        .section-title { font-family: 'Bodoni Moda', serif; font-size: clamp(2.2rem, 5vw, 3.5rem); margin-bottom: 50px; padding-top: 80px; }
+        .section-title span { display: block; font-size: 0.8rem; color: var(--red); letter-spacing: 10px; text-transform: uppercase; margin-bottom: 15px; }
+
+        /* Grilles et Cartes "Bien Entrées" */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; padding-bottom: 100px; }
+        .card { background: white; border-radius: 25px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.05); transition: 0.5s; cursor: pointer; border: 1px solid #eee; }
+        .card:hover { transform: translateY(-15px); box-shadow: 0 30px 60px rgba(0,0,0,0.12); }
+        
+        .card-img-container { width: 100%; height: 400px; overflow: hidden; }
+        .card-img-container img { width: 100%; height: 100%; object-fit: cover; transition: 0.8s; }
+        .card:hover img { transform: scale(1.08); }
+        
+        .card-body { padding: 30px; }
+        .card-body h3 { margin: 0 0 10px 0; font-family: 'Bodoni Moda'; font-size: 1.6rem; }
+        .price { color: var(--red); font-weight: 800; font-size: 1.2rem; }
+
+        /* Vintage Section */
+        #vintage-section { transition: var(--transition); }
+        .is-vintage { background: var(--dark) !important; color: white !important; }
+        .is-vintage nav { background: rgba(0,0,0,0.9) !important; border-bottom-color: var(--gold); }
+        .is-vintage .nav-links a { color: white; }
+        .is-vintage .logo-text { color: white; }
+        .is-vintage .card { background: #151515; border-color: #222; color: white; }
+        .is-vintage .price { color: var(--gold); }
+
+        .vintage-banner { height: 500px; background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('mercedes-vintage.jpg.jpg') center/cover fixed; display: flex; align-items: center; justify-content: center; border-radius: 30px; margin: 0 5% 80px 5%; }
+
+        /* Modal */
+        .modal { display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); backdrop-filter: blur(10px); }
+        .modal-content { background: white; margin: 8vh auto; padding: 40px; border-radius: 30px; width: 90%; max-width: 450px; color: var(--blue); position: relative; }
+        .form-group { margin-bottom: 20px; text-align: left; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; }
+        .form-group input { width: 100%; padding: 15px; border: 2px solid #eee; border-radius: 12px; font-family: 'Outfit'; font-size: 1rem; box-sizing: border-box; }
+        .btn-submit { background: #25d366; color: white; width: 100%; padding: 20px; border: none; border-radius: 15px; font-weight: 800; cursor: pointer; font-size: 1.1rem; display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 20px; }
+
+        footer { background: #000; color: white; padding: 80px 5%; text-align: center; border-top: 5px solid var(--gold); }
+
+        @media (max-width: 768px) {
+            #about { grid-template-columns: 1fr; text-align: center; }
+            .about-text { text-align: center; }
+            .nav-links { display: none; }
+            .hero h1 { font-size: 3.5rem; }
+            .grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body onclick="playJazz()">
+
+<div id="player" style="position: absolute; top: -9999px;"></div>
+
+<div class="top-bar">Le prestige n'a pas d'âge, il a une adresse : Rabat Hay Riad.</div>
+
+<nav id="main-nav">
+    <div class="nav-content">
+        <a href="#" class="logo-container">
+            <div class="logo-icon"><i class="fas fa-crown"></i></div>
+            <div class="logo-text">RIYAD AUTO<span>PRESTIGE</span></div>
+        </a>
+        <div class="nav-links">
+            <a href="#about">Qui sommes-nous ?</a>
+            <a href="#modern-section">Luxe Moderne</a>
+            <a href="#vintage-section">Collection Héritage</a>
+            <a href="tel:0628875855" style="background:var(--red); color:white; padding:10px 18px; border-radius:50px;"><i class="fas fa-phone"></i> 06 28 87 58 55</a>
+        </div>
+    </div>
+</nav>
+
+<section class="hero">
+    <h1>L'ÉLITE À RABAT</h1>
+    <p>Conciergerie & Location de Prestige</p>
+    <div style="margin-top: 40px; font-size: 0.8rem; opacity: 0.8; background: rgba(0,0,0,0.5); padding: 10px 20px; border-radius: 50px; cursor: pointer;">
+        <i class="fas fa-music"></i> Cliquez ici pour activer l'ambiance Jazz
+    </div>
+</section>
+
+<section id="about">
+    <div class="about-text">
+        <h2>Une Signature de Prestige</h2>
+        <p>Basée au cœur de Hay Riad à Rabat, <strong>Riyad Auto Prestige</strong> redéfinit les standards de la location automobile de luxe au Maroc.</p>
+        <p>Que vous recherchiez la puissance brute d'une Mustang moderne ou le charme intemporel d'une Mercedes vintage pour votre mariage, nous mettons à votre disposition une flotte d'exception et un service de conciergerie sur-mesure.</p>
+    </div>
+    <div class="about-img">
+        <img src="votre-image-agence.jpg" alt="Riyad Auto Prestige">
+    </div>
+</section>
+
+<section id="modern-section" class="container">
+    <h2 class="section-title"><span>La Flotte</span>LUXE MODERNE</h2>
+    <div class="grid">
+        <div class="card" onclick="openModal('Mustang GT V8')">
+            <div class="card-img-container"><img src="mustang.jpg.jpeg"></div>
+            <div class="card-body"><h3>Ford Mustang GT V8</h3><span class="price">1200 DH / Jour</span></div>
+        </div>
+        <div class="card" onclick="openModal('BMW M-Sport Luxe')">
+            <div class="card-img-container"><img src="bmw.jpg.jpeg"></div>
+            <div class="card-body"><h3>BMW M-Sport Luxe</h3><span class="price">900 DH / Jour</span></div>
+        </div>
+        <div class="card" onclick="openModal('Skoda Octavia 2024')">
+            <div class="card-img-container"><img src="skoda.jpg.jpeg"></div>
+            <div class="card-body"><h3>Skoda Octavia 2024</h3><span class="price">500 DH / Jour</span></div>
+        </div>
+    </div>
+</section>
+
+<section id="vintage-section">
+    <div class="vintage-banner">
+        <h2 style="font-family:'Bodoni Moda'; font-size:clamp(2.5rem, 6vw, 4.5rem); color:var(--gold); text-align: center;">COLLECTION HÉRITAGE</h2>
+    </div>
+
+    <div class="container">
+        <div class="grid">
+            <div class="card" onclick="openModal('Mercedes S-Class W140')">
+                <div class="card-img-container"><img src="mercedes.jpg.jpg"></div>
+                <div class="card-body"><h3>Mercedes S-Class W140</h3><span class="price">1500 DH / Jour</span></div>
+            </div>
+            <div class="card" onclick="openModal('Wedding Edition')">
+                <div class="card-img-container"><img src="wedding-car.jpg.jpg"></div>
+                <div class="card-body"><h3>Wedding Special Edition</h3><span class="price">Sur Devis</span></div>
+            </div>
+            <div class="card" onclick="openModal('Mercedes 190 Héritage')">
+                <div class="card-img-container"><img src="mercedes-vintage.jpg.jpg"></div>
+                <div class="card-body"><h3>Mercedes 190 Héritage</h3><span class="price">Prestige</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="logo-container" style="justify-content:center; margin-bottom: 30px;">
+        <div class="logo-icon" style="background:white; color:var(--blue);"><i class="fas fa-crown"></i></div>
+        <div class="logo-text" style="color:white;">RIYAD AUTO<span style="color:var(--gold);">PRESTIGE</span></div>
+    </div>
+    <p>Avenue Al Nakhil, Hay Riyad, Rabat, Maroc</p>
+    <p style="color:var(--gold); font-weight: 700; font-size: 1.2rem; margin: 20px 0;">06 28 87 58 55 | riyadautoprestige@gmail.com</p>
+    <div style="opacity: 0.5; font-size: 0.8rem;">© 2024 Riyad Auto Prestige. Excellence Automobile à Rabat.</div>
+</footer>
+
+<div id="bookingModal" class="modal">
+    <div class="modal-content">
+        <span style="float:right; cursor:pointer; font-size:2rem; line-height: 0.5;" onclick="closeModal()">&times;</span>
+        <h3 id="modalTitle" style="font-family:'Bodoni Moda'; font-size:1.8rem; margin: 0 0 10px 0;">RÉSERVATION</h3>
+        <p id="modalSub" style="color:#666; margin-bottom:30px;"></p>
+        
+        <div class="form-group">
+            <label>Votre Nom Complet</label>
+            <input type="text" id="clientName" placeholder="M. Ahmed Alami">
+        </div>
+        <div class="form-group">
+            <label>Date prévue</label>
+            <input type="date" id="dStart">
+        </div>
+        <div class="form-group">
+            <label>Durée (jours)</label>
+            <input type="number" id="dDur" placeholder="Ex: 3">
+        </div>
+
+        <button class="btn-submit" onclick="processBooking()"><i class="fab fa-whatsapp"></i> Envoyer sur WhatsApp</button>
+    </div>
+</div>
+
+<script>
+    // 1. YouTube Jazz API
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    var player;
+    function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+            height: '0', width: '0',
+            videoId: 'nv_2rz5BFDA',
+            playerVars: { 'autoplay': 1, 'loop': 1, 'playlist': 'nv_2rz5BFDA', 'start': 1924 }
+        });
+    }
+
+    function playJazz() {
+        if(player && player.playVideo) player.playVideo();
+    }
+
+    // 2. Observer pour le changement d'ambiance (Vintage Mode)
+    const vintageSection = document.getElementById('vintage-section');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                document.body.classList.add('is-vintage');
+            } else {
+                document.body.classList.remove('is-vintage');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    observer.observe(vintageSection);
+
+    // 3. Modal & WhatsApp Logic
+    let currentCar = '';
+    function openModal(car) {
+        currentCar = car;
+        document.getElementById('bookingModal').style.display = 'block';
+        document.getElementById('modalSub').innerText = "Veuillez préciser vos dates pour la " + car;
+    }
+
+    function closeModal() { document.getElementById('bookingModal').style.display = 'none'; }
+
+    function processBooking() {
+        const name = document.getElementById('clientName').value;
+        const start = document.getElementById('dStart').value;
+        const dur = document.getElementById('dDur').value;
+        
+        if(!name || !start) { alert("Veuillez remplir les informations obligatoires."); return; }
+        
+        const text = `Bonjour Riyad Auto Prestige, je suis ${name}. Je souhaite réserver la *${currentCar}* pour ${dur} jours à partir du ${start}.`;
+        window.open(`https://wa.me/212628875855?text=${encodeURIComponent(text)}`, '_blank');
+        closeModal();
+    }
+
+    // Fermer le modal si on clique à côté
+    window.onclick = function(event) {
+        if (event.target == document.getElementById('bookingModal')) closeModal();
+    }
+</script>
+
+</body>
+</html>
